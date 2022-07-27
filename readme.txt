@@ -1,1 +1,1 @@
-readme please remove comic
+readme please otro  neuvo cambio
