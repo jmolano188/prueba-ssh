@@ -1,1 +1,1 @@
-readme please
+readme please remove comic
