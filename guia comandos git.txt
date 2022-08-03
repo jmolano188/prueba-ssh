@@ -85,4 +85,5 @@ rm -rf Nombre repositorio/   elimina el repositorio
 
 git fetch origin   nos permite saber que paso en el repositorio remoto
  git checkout nombre rama remota    descarga la informacion de esa rama.
+ git pull origin "nombre rama"   actualiza la rama local desde el repositorio remoto
 
