@@ -88,4 +88,4 @@ git fetch origin   nos permite saber que paso en el repositorio remoto
  git pull origin "nombre rama"   actualiza la rama local desde el repositorio remoto
  git push -f    reemplaza rama local por la remota
 git reset --hard origin/nombre rama  resetea la rama remota por la local
-
+git rabase origin/rama de la que se quieren traer commits del repositorio remoto
