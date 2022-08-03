@@ -1,0 +1,91 @@
+git --version                                                            "verificar si tenemos git"
+git config --global user.name "se escribe el nombre de ususario"          - configuramos nombre de ussuario-
+git config --global user.email "se escribe el email"                     - se configura el email-
+
+git config --global -e                                                    -se revisa la configuracion de usuario y email-
+
+git config --global -l                                                     - se revisa config de solo lectura-
+cd *nombre*								   -  nos ubicamos en el espacio  de trabajo-
+
+git init         -inicia el repositorio-
+git status      - nos deja ver que esta pasando en el repositorio que se agrego, elimino o modifico-
+
+*** cuando aparecen archivos en rojo es porque aun no estan listos, estan en working
+git add "nombre archivo"          -se usa cuando ya esta terminado el archivo
+git add.                          - hace q todos los archivos se pongan en verde
+git commit                          - se usa cuando ya lo agregamos al repositorio
+git commit -M  ""se escribe mensaje"
+git log                             - muestra los commits realizados
+git log --oneline          "nos muestra el codigo del commit"
+git log --oneline | cat   muestra el codigo del commit en la misma ventana
+git checkout  -- nombre archivo             - revierte los cambios locales
+git reset                         - movemos archivos del stage 
+
+git help  comando                           -muestra la funcionalidad de un comando
+git diff                                    - muestra los cambios que eh hecho en archivos y q no estan todavia en el stage
+
+git commit --amend             -mezcla el ultimo cambio con el anterior
+
+*** ELIMINAR UN COMMIT
+
+git reset "nombre del commit"     - se elimina el commit, es mejor usarlo de forma local y los aca del stage
+git reset --hard "nombre commit"  elimina el commit y del stage
+git reset --soft "nombre commit"   deja la modificacion en el stage
+///// comando revert
+git head~1 hace referencia al commit anterior
+
+git revert head    revierte el commit en el q esta ubicado
+revert --no-commit HEAD  	 elimica el commit lo pone en el stage sin generar commits de revert.
+
+git revert --comtinue termina de hyacer la reversion generando un unico commit
+--no
+
+/////////////////////////////
+git branch           lista de ramamas creadas
+
+git branch feature-newstile   crea una nueva rama
+git checkout "nombre rama"    cambia de rama
+git checkout -b "feature-newhomepage"   crea una nueva rama y se ubica en ella de una vez
+git brach -m   nombre_antiguo  nuevo_nombre        para cambiar el nombre de una rama
+git branch -d  nombre_rama            elimina la rama
+//////////////////////////////////////////////////////////////////////
+
+git merge "nombre rama"     se integra la rama master con la que se desea
+
+///////////////////////////////////////////////////
+autenticacion de clave publica y privada con ssh
+
+clave publica y privada
+
+ssh-keygen     genera claves
+ssh-keygen      genracion de clave publica y privada
+
+cat id_rsa.pub   permite visualizar la clave publica
+eval $(ssh-agent-s)     crea un agente que me guarda las claves 
+ssh add "ruta de la clave"   agrega la clave(privada) al agente
+
+git remote add origin "link-clave-publica"
+/////////////////////////////////////////////////
+etiquetas
+
+git tag "nombre etiqueta"         etiqueta la rama
+git tag -d "nombre etiqueta       elimina la etiqueta
+git tag -a nombre etiqueta -m "mensaje"
+git tag -a "nombre etiqueta" codigo commit -m "mensaje"       se usa cuando debo agregar etiqueta a commits anteriores
+///////////////////////////////////////////////////
+repositorios remotos
+
+hacer push: sincorniza el repositorio local con el remoto, sube la creaciond e nuevas ramas o commits
+git remote add origin url 0 llave publica
+
+git push -u origin master   
+git clone url o key     clona un repositorio 
+
+rm -rf Nombre repositorio/   elimina el repositorio
+
+git fetch origin   nos permite saber que paso en el repositorio remoto
+ git checkout nombre rama remota    descarga la informacion de esa rama.
+ git pull origin "nombre rama"   actualiza la rama local desde el repositorio remoto
+ git push -f    reemplaza rama local por la remota
+git reset --hard origin/nombre rama  resetea la rama remota por la local
+
